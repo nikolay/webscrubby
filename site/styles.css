@@ -224,6 +224,7 @@ main {
   background: var(--sun);
   border-radius: 999px;
   height: 27px;
+  margin-bottom: 5px;
   position: relative;
   width: 6px;
 }
