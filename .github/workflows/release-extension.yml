@@ -65,9 +65,12 @@ jobs:
           tag="${GITHUB_REF_NAME}"
           package_path="${{ steps.package.outputs.package_path }}"
           version="${{ steps.extension.outputs.version }}"
-          notes="WebScrubby Chrome extension ${version}.
+          notes="$(cat <<EOF
+          WebScrubby Chrome extension ${version}.
 
-This ZIP is the Chrome Web Store upload package generated from the tagged source."
+          This ZIP is the Chrome Web Store upload package generated from the tagged source.
+          EOF
+          )"
 
           if gh release view "${tag}" >/dev/null 2>&1; then
             gh release upload "${tag}" "${package_path}" --clobber
@@ -76,4 +79,3 @@ This ZIP is the Chrome Web Store upload package generated from the tagged source
               --title "WebScrubby ${version}" \
               --notes "${notes}"
           fi
-
