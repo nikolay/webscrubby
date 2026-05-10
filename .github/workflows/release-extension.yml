@@ -1,0 +1,79 @@
+name: Release Extension Package
+
+on:
+  push:
+    tags:
+      - "extension-v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: extension-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Read extension version
+        id: extension
+        run: |
+          version="$(node -p "require('./manifest.json').version")"
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+          echo "package_base=webscrubby-chrome-extension-${version}" >> "$GITHUB_OUTPUT"
+
+      - name: Ensure tag matches manifest version
+        if: github.ref_type == 'tag'
+        run: |
+          expected="extension-v${{ steps.extension.outputs.version }}"
+          actual="${GITHUB_REF_NAME}"
+          if [ "${actual}" != "${expected}" ]; then
+            echo "Tag must match manifest version. Expected ${expected}, got ${actual}." >&2
+            exit 1
+          fi
+
+      - name: Validate extension
+        run: |
+          node tests/scrubber.test.js
+          node tests/offscreen.test.js
+          node --check src/scrubber.js
+          node --check background.js
+          node --check content.js
+          node --check offscreen.js
+          node -e "for (const file of ['manifest.json','rules/query-params.json','rules.schema.json','package.json']) JSON.parse(require('fs').readFileSync(file, 'utf8'))"
+
+      - name: Package extension
+        id: package
+        run: bash scripts/package-extension.sh "${{ runner.temp }}/${{ steps.extension.outputs.package_base }}.zip"
+
+      - name: Upload package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.extension.outputs.package_base }}
+          path: ${{ steps.package.outputs.package_path }}
+
+      - name: Create or update GitHub release
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="${GITHUB_REF_NAME}"
+          package_path="${{ steps.package.outputs.package_path }}"
+          version="${{ steps.extension.outputs.version }}"
+          notes="WebScrubby Chrome extension ${version}.
+
+This ZIP is the Chrome Web Store upload package generated from the tagged source."
+
+          if gh release view "${tag}" >/dev/null 2>&1; then
+            gh release upload "${tag}" "${package_path}" --clobber
+          else
+            gh release create "${tag}" "${package_path}" \
+              --title "WebScrubby ${version}" \
+              --notes "${notes}"
+          fi
+

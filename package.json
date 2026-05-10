@@ -1,0 +1,12 @@
+{
+  "name": "webscrubby",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chrome extension that removes tracking query parameters from navigated and copied links.",
+  "homepage": "https://webscrubby.com/",
+  "scripts": {
+    "check": "npm test && node --check src/scrubber.js && node --check background.js && node --check content.js && node --check offscreen.js",
+    "package": "bash scripts/package-extension.sh",
+    "test": "node tests/scrubber.test.js && node tests/offscreen.test.js"
+  }
+}

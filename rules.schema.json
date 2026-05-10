@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://webscrubby.local/rules.schema.json",
+  "title": "WebScrubby URL cleanup rules",
+  "type": "object",
+  "required": [
+    "version",
+    "parameters"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "match"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "match": {
+            "enum": [
+              "exact",
+              "prefix",
+              "suffix",
+              "regex"
+            ]
+          },
+          "pattern": {
+            "type": "string"
+          },
+          "caseSensitive": {
+            "type": "boolean"
+          },
+          "removeWhen": {
+            "type": "object",
+            "properties": {
+              "referrerHostnames": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "noReferrer": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "redirects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "hostnames",
+          "targetParams"
+        ],
+        "properties": {
+          "hostnames": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "pathnames": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "targetParams": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

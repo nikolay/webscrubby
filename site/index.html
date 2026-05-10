@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WebScrubby | Clean Links for Chrome</title>
+    <meta
+      name="description"
+      content="WebScrubby is a Chrome extension that removes tracking query parameters and copies cleaner links from the context menu."
+    />
+    <link rel="canonical" href="https://webscrubby.com/" />
+    <meta property="og:title" content="WebScrubby | Clean Links for Chrome" />
+    <meta
+      property="og:description"
+      content="Remove common tracking parameters from links as you browse, open, and copy URLs."
+    />
+    <meta property="og:url" content="https://webscrubby.com/" />
+    <meta property="og:image" content="https://webscrubby.com/assets/icon-128.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/icon-48.png" />
+    <link rel="icon" type="image/png" sizes="128x128" href="assets/icon-128.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="https://webscrubby.com/">
+        <img src="assets/webscrubby-logo.svg" width="40" height="40" alt="" />
+        <span>WebScrubby</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="privacy.html">Policy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <h1>Clean the tracking bits out of links.</h1>
+          <p>
+            WebScrubby removes common campaign, ad, and social tracking query parameters
+            before you open or copy a URL. It also unwraps redirect links from services
+            like Facebook, Google, YouTube, LinkedIn, and Slack.
+          </p>
+          <div class="cta-row" aria-label="Project actions">
+            <a class="button primary" href="https://github.com/nikolay/webscrubby/releases" rel="noreferrer">
+              Download release
+            </a>
+            <a class="button secondary" href="https://github.com/nikolay/webscrubby" rel="noreferrer">
+              Source code
+            </a>
+          </div>
+        </div>
+
+        <div class="link-demo" aria-label="Tracked link cleaned by WebScrubby">
+          <div class="browser-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="demo-body">
+            <img src="assets/webscrubby-logo.svg" width="96" height="96" alt="" />
+            <div class="url-card dirty">
+              <span>Before</span>
+              <code>example.com/article?utm_source=newsletter&amp;fbclid=abc</code>
+            </div>
+            <div class="scrub-arrow" aria-hidden="true"></div>
+            <div class="url-card clean">
+              <span>After</span>
+              <code>example.com/article</code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="feature-grid" aria-label="WebScrubby features">
+        <article>
+          <h2>Scrubs as you browse</h2>
+          <p>
+            Known tracking parameters are removed from navigated links, including
+            direct address-bar visits without a referrer.
+          </p>
+        </article>
+        <article>
+          <h2>Copy clean links</h2>
+          <p>
+            The right-click menu adds <strong>Copy scrubbed link</strong>, so pasted
+            URLs stay focused on the destination instead of the tracker payload.
+          </p>
+        </article>
+        <article>
+          <h2>Unwraps redirects</h2>
+          <p>
+            Redirect wrappers are decoded structurally, then the embedded target URL
+            is scrubbed just like a normal link.
+          </p>
+        </article>
+      </section>
+
+      <section id="privacy" class="privacy-band">
+        <div>
+          <h2>Built to stay local.</h2>
+          <p>
+            WebScrubby does not send browsing data to a WebScrubby server. URL cleanup
+            happens in the extension using bundled rules, and clipboard access is used
+            only after you choose the context-menu copy action.
+          </p>
+        </div>
+        <a class="text-link" href="privacy.html">Read the privacy policy</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Built by <a href="https://github.com/nikolay" rel="noreferrer">Nikolay</a>.
+        WebScrubby is open source on <a href="https://github.com/nikolay/webscrubby" rel="noreferrer">GitHub</a>.
+      </p>
+    </footer>
+  </body>
+</html>
+

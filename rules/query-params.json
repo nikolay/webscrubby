@@ -1,0 +1,267 @@
+{
+  "$schema": "../rules.schema.json",
+  "version": 1,
+  "redirects": [
+    {
+      "hostnames": [
+        "facebook.com"
+      ],
+      "pathnames": [
+        "/l.php"
+      ],
+      "targetParams": [
+        "u"
+      ],
+      "description": "Facebook outbound link redirect wrapper."
+    },
+    {
+      "hostnames": [
+        "instagram.com"
+      ],
+      "pathnames": [
+        "/"
+      ],
+      "targetParams": [
+        "u"
+      ],
+      "description": "Instagram outbound link redirect wrapper."
+    },
+    {
+      "hostnames": [
+        "google.com"
+      ],
+      "pathnames": [
+        "/url"
+      ],
+      "targetParams": [
+        "url",
+        "q"
+      ],
+      "description": "Google search result redirect wrapper."
+    },
+    {
+      "hostnames": [
+        "youtube.com"
+      ],
+      "pathnames": [
+        "/redirect"
+      ],
+      "targetParams": [
+        "q"
+      ],
+      "description": "YouTube outbound link redirect wrapper."
+    },
+    {
+      "hostnames": [
+        "linkedin.com"
+      ],
+      "pathnames": [
+        "/safety/go"
+      ],
+      "targetParams": [
+        "url"
+      ],
+      "description": "LinkedIn outbound link redirect wrapper."
+    },
+    {
+      "hostnames": [
+        "slack-redir.net"
+      ],
+      "pathnames": [
+        "/link"
+      ],
+      "targetParams": [
+        "url"
+      ],
+      "description": "Slack outbound link redirect wrapper."
+    }
+  ],
+  "parameters": [
+    {
+      "name": "utm_",
+      "match": "prefix",
+      "description": "Google Analytics and other UTM campaign parameters."
+    },
+    {
+      "name": "gclid",
+      "match": "exact",
+      "description": "Google Ads click identifier."
+    },
+    {
+      "name": "gclsrc",
+      "match": "exact",
+      "description": "Google Ads click source marker."
+    },
+    {
+      "name": "dclid",
+      "match": "exact",
+      "description": "Google Display click identifier."
+    },
+    {
+      "name": "wbraid",
+      "match": "exact",
+      "description": "Google Ads web-to-app click identifier."
+    },
+    {
+      "name": "gbraid",
+      "match": "exact",
+      "description": "Google Ads app-to-web click identifier."
+    },
+    {
+      "name": "fbclid",
+      "match": "exact",
+      "description": "Facebook click identifier."
+    },
+    {
+      "name": "fb_action_ids",
+      "match": "exact",
+      "description": "Facebook social action tracking."
+    },
+    {
+      "name": "fb_action_types",
+      "match": "exact",
+      "description": "Facebook social action tracking."
+    },
+    {
+      "name": "msclkid",
+      "match": "exact",
+      "description": "Microsoft Ads click identifier."
+    },
+    {
+      "name": "twclid",
+      "match": "exact",
+      "description": "Twitter/X click identifier."
+    },
+    {
+      "name": "ttclid",
+      "match": "exact",
+      "description": "TikTok click identifier."
+    },
+    {
+      "name": "yclid",
+      "match": "exact",
+      "description": "Yandex click identifier."
+    },
+    {
+      "name": "li_fat_id",
+      "match": "exact",
+      "description": "LinkedIn first-party ad tracking."
+    },
+    {
+      "name": "igshid",
+      "match": "exact",
+      "description": "Instagram share identifier."
+    },
+    {
+      "name": "mc_cid",
+      "match": "exact",
+      "description": "Mailchimp campaign identifier."
+    },
+    {
+      "name": "mc_eid",
+      "match": "exact",
+      "description": "Mailchimp email recipient identifier."
+    },
+    {
+      "name": "mkt_tok",
+      "match": "exact",
+      "description": "Marketo tracking token."
+    },
+    {
+      "name": "vero_id",
+      "match": "exact",
+      "description": "Vero email campaign identifier."
+    },
+    {
+      "name": "_hs",
+      "match": "prefix",
+      "description": "HubSpot campaign and message identifiers."
+    },
+    {
+      "name": "hsa_",
+      "match": "prefix",
+      "description": "HubSpot ads tracking parameters."
+    },
+    {
+      "name": "oly_",
+      "match": "prefix",
+      "description": "Omeda campaign tracking identifiers."
+    },
+    {
+      "name": "__s",
+      "match": "exact",
+      "description": "Email and newsletter tracking identifier."
+    },
+    {
+      "name": "rb_clickid",
+      "match": "exact",
+      "description": "Reddit advertising click identifier."
+    },
+    {
+      "name": "sc_campaign",
+      "match": "exact",
+      "description": "Campaign tracking parameter used by several marketing tools."
+    },
+    {
+      "name": "cmpid",
+      "match": "exact",
+      "description": "Generic campaign identifier."
+    },
+    {
+      "name": "campaign_id",
+      "match": "exact",
+      "description": "Generic campaign identifier."
+    },
+    {
+      "name": "ad_id",
+      "match": "exact",
+      "description": "Generic ad identifier."
+    },
+    {
+      "name": "adset_id",
+      "match": "exact",
+      "description": "Generic ad set identifier."
+    },
+    {
+      "name": "pk_",
+      "match": "prefix",
+      "description": "Piwik Pro campaign parameters."
+    },
+    {
+      "name": "piwik_",
+      "match": "prefix",
+      "description": "Piwik campaign parameters."
+    },
+    {
+      "name": "matomo_",
+      "match": "prefix",
+      "description": "Matomo campaign parameters."
+    },
+    {
+      "name": "wt.",
+      "match": "prefix",
+      "description": "Webtrends campaign parameters."
+    },
+    {
+      "name": "spm",
+      "match": "exact",
+      "description": "Site performance and marketplace tracking parameter."
+    },
+    {
+      "name": "ref_src",
+      "match": "exact",
+      "description": "Social network referral source marker."
+    },
+    {
+      "name": "ref",
+      "match": "exact",
+      "removeWhen": {
+        "referrerHostnames": [
+          "producthunt.com"
+        ],
+        "noReferrer": true
+      },
+      "description": "Referral parameter that can be meaningful on some sites, so it is removed only for listed referrers or direct/no-referrer opens."
+    }
+  ]
+}
