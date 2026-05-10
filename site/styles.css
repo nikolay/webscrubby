@@ -223,7 +223,7 @@ main {
 .scrub-arrow {
   background: var(--sun);
   border-radius: 999px;
-  height: 54px;
+  height: 27px;
   position: relative;
   width: 6px;
 }
