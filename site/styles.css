@@ -223,19 +223,19 @@ main {
 .scrub-arrow {
   background: var(--sun);
   border-radius: 999px;
-  height: 6px;
+  height: 54px;
   position: relative;
-  width: 72px;
+  width: 6px;
 }
 
 .scrub-arrow::after {
-  border-bottom: 8px solid transparent;
-  border-left: 12px solid var(--sun);
-  border-top: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid var(--sun);
+  bottom: -5px;
   content: "";
+  left: -5px;
   position: absolute;
-  right: -6px;
-  top: -5px;
 }
 
 .feature-grid {
@@ -371,4 +371,3 @@ footer p {
     width: 100%;
   }
 }
-
