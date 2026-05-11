@@ -3,6 +3,7 @@
 ## Store Presence
 
 - Name: WebScrubby
+- Chrome Web Store item ID: ebomfpkjnagghkpipgcghjamnpoiekne
 - Website: https://webscrubby.com/
 - Support email: support@webscrubby.com
 - Privacy policy: https://webscrubby.com/privacy.html
@@ -51,7 +52,9 @@ WebScrubby processes URLs, link destinations, and referrer hostnames locally in 
 ## Assets
 
 - Extension icon: `assets/icons/icon-128.png`
+- Store screenshot source: `store-assets/webscrubby-screenshot-1280x800.svg`
+- Store screenshot PNG: `store-assets/webscrubby-screenshot-1280x800.png`
+- Store screenshot JPG: `store-assets/webscrubby-screenshot-1280x800.jpg`
 - Store package ZIP: generated with `bash scripts/package-extension.sh`
 - Privacy policy: `site/privacy.html`
 - Terms: `site/terms.html`
-

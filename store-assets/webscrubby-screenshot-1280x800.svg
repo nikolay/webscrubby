@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-labelledby="title desc">
+  <title id="title">WebScrubby Chrome Web Store screenshot</title>
+  <desc id="desc">A WebScrubby product screenshot showing tracking parameters removed from a URL.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="20" stdDeviation="26" flood-color="#0e2b2f" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="800" fill="#f4fbfb"/>
+  <rect x="0" y="0" width="1280" height="800" fill="#e8f6f5"/>
+  <path d="M0 640 C220 572 326 688 526 626 C744 558 835 502 1054 552 C1158 576 1212 554 1280 520 L1280 800 L0 800 Z" fill="#d8efea"/>
+  <g transform="translate(82 72)">
+    <image href="../assets/icons/icon-128.png" x="0" y="0" width="72" height="72" preserveAspectRatio="xMidYMid meet"/>
+    <text x="90" y="44" fill="#1d2a2f" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800">WebScrubby</text>
+    <text x="0" y="154" fill="#1d2a2f" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="900">Clean links.</text>
+    <text x="0" y="242" fill="#1d2a2f" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="900">No tracking bits.</text>
+    <text x="0" y="316" fill="#5f6d73" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">Remove UTM tags, click IDs, newsletter</text>
+    <text x="0" y="356" fill="#5f6d73" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">identifiers, and social tracking parameters.</text>
+    <g transform="translate(0 430)">
+      <rect x="0" y="0" width="196" height="54" rx="8" fill="#4b9a91"/>
+      <text x="28" y="36" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="800">Open source</text>
+      <rect x="218" y="0" width="184" height="54" rx="8" fill="#ffffff" stroke="#d2dcdd"/>
+      <text x="246" y="36" fill="#1d2a2f" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="800">Runs locally</text>
+    </g>
+  </g>
+  <g transform="translate(718 112)" filter="url(#shadow)">
+    <rect width="448" height="560" rx="24" fill="#ffffff" stroke="#cfdcde"/>
+    <rect width="448" height="50" rx="24" fill="#25333a"/>
+    <rect y="26" width="448" height="24" fill="#25333a"/>
+    <circle cx="28" cy="25" r="6" fill="#d6e0e2"/>
+    <circle cx="48" cy="25" r="6" fill="#d6e0e2"/>
+    <circle cx="68" cy="25" r="6" fill="#d6e0e2"/>
+    <image href="../assets/icons/icon-128.png" x="162" y="88" width="124" height="124" preserveAspectRatio="xMidYMid meet"/>
+    <g transform="translate(38 244)">
+      <rect width="372" height="100" rx="12" fill="#fff7f2" stroke="#ead6c9"/>
+      <text x="18" y="32" fill="#5f6d73" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="900">BEFORE</text>
+      <text x="18" y="61" fill="#1d2a2f" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18">example.com/article?</text>
+      <text x="18" y="84" fill="#1d2a2f" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18">utm_source=newsletter&amp;fbclid=abc</text>
+    </g>
+    <g transform="translate(224 370)">
+      <rect x="-3" y="0" width="6" height="30" rx="3" fill="#efc65d"/>
+      <path d="M0 44 L-12 26 L12 26 Z" fill="#efc65d"/>
+    </g>
+    <g transform="translate(38 442)">
+      <rect width="372" height="80" rx="12" fill="#e0f3ea" stroke="#b9dfd2"/>
+      <text x="18" y="32" fill="#5f6d73" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="900">AFTER</text>
+      <text x="18" y="61" fill="#1d2a2f" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18">example.com/article</text>
+    </g>
+  </g>
+</svg>
